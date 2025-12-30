@@ -7,7 +7,7 @@
     <title>Access Restricted - Note Nexus</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 
@@ -40,7 +40,7 @@
             <div class="flex justify-between items-center bg-black/50 backdrop-blur-lg border border-white/10 rounded-full px-6 py-3">
                 <a href="beta_gate.html" class="flex items-center gap-2 group">
                     <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center text-black font-bold logo-shine">
-                        <img src="Note Nexus Logo.jpg" alt="Logo" class="w-full h-full object-contain">
+                        <img src="{{ url_for('static', filename='Note Nexus Logo.jpg') }}" alt="Logo" class="w-full h-full object-contain">
                     </div>
                     <span class="font-display font-bold text-xl tracking-wide logo-shine">Note Nexus</span>
                 </a>
@@ -92,6 +92,6 @@
         </div>
     </footer>
 
-    <script src="../index.js"></script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
 </body>
 </html>
