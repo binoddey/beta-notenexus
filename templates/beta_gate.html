@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beta Access - Note Nexus</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        nexus: { black: '#050505', yellow: '#FACC15' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#050505] text-white antialiased">
+
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute inset-0 bg-grid z-[-1]"></div>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center bg-black/50 backdrop-blur-lg border border-white/10 rounded-full px-6 py-3">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center text-black font-bold logo-shine">
+                        <img src="Note Nexus Logo.jpg" alt="Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span class="font-display font-bold text-xl tracking-wide logo-shine">Note Nexus</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm text-gray-300 hover:text-yellow-400 transition">Home</a>
+                    <a href="contact.html" class="text-sm text-gray-300 hover:text-yellow-400 transition">Contact</a>
+                </div>
+                <a href="notes/notes.html" class="px-5 py-2 text-sm font-semibold text-black bg-yellow-400 rounded-full hover:bg-yellow-300 transition">Notes Library</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            
+            <div class="text-center mb-12 reveal active">
+                <h1 class="font-display text-5xl md:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
+                    Join the <span class="text-yellow-400">Beta Program</span>
+                </h1>
+                <p class="text-gray-400 mt-4 text-lg">
+                    Be the first to experience the ultimate B.Tech ecosystem. <br>
+                    Shape the future of <span class="text-white font-medium">Note Nexus</span>.
+                </p>
+            </div>
+
+            <div class="glass-card rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group">
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-300 ml-1">Full Name</label>
+                            <input type="text" required placeholder="John Doe" 
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-400/50 transition">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-300 ml-1">College Email</label>
+                            <input type="email" name="email" required placeholder="john@college.edu" 
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-400/50 transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-300 ml-1">Branch</label>
+                            <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-400/50 transition text-gray-400">
+                                <option>Computer Science</option>
+                                <option>Electronics</option>
+                                <option>Mechanical</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-300 ml-1">Current Year</label>
+                            <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-400/50 transition text-gray-400">
+                                <option>1st Year</option>
+                                <option>2nd Year</option>
+                                <option>3rd Year</option>
+                                <option>4th Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-300 ml-1">Why do you want to join the beta?</label>
+                        <textarea rows="3" placeholder="Tell us how we can help your academic journey..." 
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-400/50 transition"></textarea>
+                    </div>
+
+                    <button type="submit" 
+                        class="w-full py-4 bg-yellow-400 text-black font-bold rounded-xl hover:bg-yellow-300 transition-all hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] active:scale-95">
+                        Claim Beta Access
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#020202] border-t border-white/10 py-16 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="space-y-4">
+                <h3 class="text-2xl font-display font-bold text-white">Note Nexus</h3>
+                <p class="text-gray-500 text-sm">Empowering B.Tech students with the resources they need to succeed.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Platform</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
+                    <li><a href="notes/notes.html" class="hover:text-yellow-400 transition">Notes Library</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/notenexus/" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/notenexus.in/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:mail.notenexus@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="copyright text-center text-xs text-gray-600 pt-8 border-t border-white/5">&copy; 2025 Note Nexus. All rights reserved.</div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
