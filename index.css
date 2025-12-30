@@ -1,0 +1,193 @@
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FACC15;
+        }
+
+        /* Glassmorphism Card Utility */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border: 1px solid rgba(250, 204, 21, 0.3);
+            box-shadow: 0 0 20px rgba(250, 204, 21, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .glass-panel {
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Animated Background Grid */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+        }
+
+        /* Swiper Customization */
+        .swiper-pagination-bullet {
+            background-color: #444;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #FACC15;
+            opacity: 1;
+            width: 20px;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+
+        /* Text Selection Color */
+        ::selection {
+            background: #FACC15;
+            color: #000;
+        }
+
+        /* --- Scroll Reveal Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Logo shine gradient (subtle) */
+        .logo-shine {
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.0) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shine 2.2s linear infinite;
+        }
+
+        /* Stagger delays for items in grid */
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        .social-footer {
+            background-color: #1a1a1a;
+            /* Dark background */
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Container for the content */
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Social Icons Container */
+        .social-icons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Individual Icon Links */
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #333;
+            /* Icon background */
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hover Animations */
+        .social-icon:hover {
+            transform: translateY(-5px);
+            /* Moves up slightly */
+            background-color: #fff;
+            /* Background turns white */
+        }
+
+        /* Specific Brand Colors on Hover */
+        .social-icon:hover .fa-linkedin {
+            color: #0077b5;
+        }
+
+        .social-icon:hover .fa-youtube {
+            color: #ff0000;
+        }
+
+        .social-icon:hover .fa-instagram {
+            color: #e1306c;
+        }
+
+        .social-icon:hover .fa-x-twitter {
+            color: #000000;
+        }
+
+        .social-icon:hover .fa-discord {
+            color: #5865F2;
+        }
+
+        .social-icon:hover .fa-envelope {
+            color: #ea4335;
+        }
+
+        /* Copyright Text */
+        .copyright {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }

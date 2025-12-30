@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Note Nexus</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/12/23/06/20251223061613-KFB3YIFV.js" defer></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        nexus: {
+                            black: '#050505',
+                            dark: '#0A0A0A',
+                            card: '#121212',
+                            gold: '#FFD700',
+                            yellow: '#FACC15'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shine': 'shine 2s linear infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        shine: {
+                            '0%': { backgroundPosition: '200% center' },
+                            '100%': { backgroundPosition: '-200% center' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body class="antialiased selection:bg-yellow-500 selection:text-black">
+
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-[120px] animate-float"></div>
+        <div
+            class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-yellow-600/5 rounded-full blur-[150px] animate-float-delayed">
+        </div>
+        <div class="absolute inset-0 bg-grid z-[-1]"></div>
+    </div>
+
+    <!-- NAVBAR: migrated/merged from notes.html (glass + responsive + mobile menu + shrink on scroll) -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div
+                class="flex justify-between items-center bg-black/50 backdrop-blur-lg border border-white/10 rounded-full px-6 py-3">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div
+                        class="w-8 h-8 bg-gradient-to-br from-yellow-300 to-yellow-600 rounded-lg flex items-center justify-center text-black font-bold text-lg transform transition-transform group-hover:rotate-12 logo-shine">
+                        <img src="Note Nexus Logo.jpg" alt="Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span
+                        class="font-display font-bold text-xl tracking-wide text-white group-hover:text-yellow-400 transition logo-shine">Note
+                        Nexus</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm text-gray-300 font-medium hover:text-yellow-400 transition-all">
+                        Home
+                    </a>
+
+                    <a href="features.html"
+                        class="text-sm text-gray-300 font-medium hover:text-yellow-400 transition-all">
+                        Features
+                    </a>
+
+                    <a href="notes/notes.html"
+                        class="text-sm text-gray-300 font-medium hover:text-yellow-400 transition-all">
+                        Notes
+                    </a>
+
+                    <a href="contact.html" class="text-sm text-yellow-400 font-medium hover:text-white transition-all">
+                        Contact
+                    </a>
+
+                    <!-- <a href="community.html"
+                        class="text-sm text-gray-300 hover:text-yellow-400 transition-all">
+                        Community
+                    </a> -->
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="notes/notes.html"
+                        class="hidden md:block px-5 py-2 text-sm font-semibold text-black bg-yellow-400 rounded-full hover:bg-yellow-300 hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] transition-all transform hover:-translate-y-0.5 active:scale-95">
+                        Notes Library
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                    <!-- <button onclick="openAuthModal()" 
+                        class="px-6 py-2 bg-yellow-400 text-black rounded-lg font-semibold hover:bg-yellow-300 transition">
+                        Login / Sign Up
+                    </button> -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- mobile menu (copied from notes.html to keep parity) -->
+        <div id="mobile-menu"
+            class="hidden absolute top-20 left-4 right-4 bg-[#111] border border-white/10 rounded-2xl p-4 flex-col space-y-4 shadow-2xl">
+            <a href="index.html"
+                class="block text-center py-2 text-yellow-400 font-medium hover:text-white transition-all">Home</a>
+            <a href="features.htmls"
+                class="block text-center py-2 text-gray-300 font-medium hover:text-yellow-400 transition-all">Features</a>
+            <a href="contact.html"
+                class="block text-center py-2 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-lg">Contact</a>
+            <!-- <a href="#community"
+                class="block text-center py-2 text-gray-300 hover:text-yellow-400 transition-all">Community</a> -->
+            <a href="notes/notes.html" class="block text-center py-3 font-bold bg-yellow-400 text-black rounded-lg">Get
+                Notes</a>
+
+        </div>
+    </nav>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        nexus: {
+                            black: '#050505',
+                            dark: '#0A0A0A',
+                            card: '#121212',
+                            gold: '#FFD700',
+                            yellow: '#FACC15'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    </head>
+
+    <body class="antialiased selection:bg-yellow-500 selection:text-black bg-nexus-black">
+
+        <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-[120px] animate-float">
+            </div>
+            <div class="absolute inset-0 bg-grid z-[-1]"></div>
+        </div>
+
+
+        <main class="relative z-10 pt-32 pb-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h1 class="font-display text-5xl md:text-6xl font-bold mb-4">Get in <span
+                            class="text-yellow-400">Touch</span></h1>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Have questions about notes, partnership opportunities, or
+                        just want to say hi? We're here to help.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="glass-card p-8 rounded-3xl reveal delay-100">
+                            <div class="flex items-start gap-6">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-yellow-400/10 flex items-center justify-center text-yellow-400 shrink-0">
+                                    <i class="fa-solid fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-1">Email Us</h3>
+                                    <p class="text-gray-400 mb-4">Our team typically responds within 24 hours.</p>
+                                    <a href="mailto:mail.notenexus@gmail.com"
+                                        class="text-yellow-400 font-medium hover:underline">mail.notenexus@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-3xl reveal delay-200">
+                            <div class="flex items-start gap-6">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-yellow-400/10 flex items-center justify-center text-yellow-400 shrink-0">
+                                    <i class="fa-brands fa-discord text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-1">Community Support</h3>
+                                    <p class="text-gray-400 mb-4">Get instant help from founders and peers on Discord.
+                                    </p>
+                                    <a href="https://discord.gg/nc6x8NEM" target="_blank"
+                                        class="inline-block px-6 py-2 bg-yellow-400 text-black rounded-full font-bold text-sm hover:bg-yellow-300 transition-all">Join
+                                        Discord</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 md:p-10 rounded-3xl reveal delay-300">
+                        <form name="contact" method="POST" data-netlify="true" class="space-y-5">
+                            <!-- Required hidden input -->
+                            <input type="hidden" name="form-name" value="contact" />
+
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                                    <input type="text" name="full_name" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white"
+                                        placeholder="Your Name" />
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                                    <input type="email" name="email" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white"
+                                        placeholder="Your Email" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+                                <select name="subject"
+                                    class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white">
+                                    <option>General Inquiry</option>
+                                    <option>Resource Contribution</option>
+                                    <option>Technical Issue</option>
+                                    <option>Partnership</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                                <textarea name="message" rows="4" required
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white"
+                                    placeholder="How can we help you?"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 bg-yellow-400 text-black font-bold rounded-xl hover:bg-yellow-300">
+                                Send Message
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="border-t border-white/10 py-10 text-center">
+            <p class="text-gray-600 text-xs">&copy; 2025 Note Nexus. Built for Engineers.</p>
+        </footer>
+
+        <!-- footer (kept, minimal changes) -->
+        <footer class="bg-[#020202] border-t border-white/10 py-16 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-display font-bold text-white">Note Nexus</h3>
+                    <p class="text-gray-500 text-sm">Empowering B.Tech students with the resources they need to succeed.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="index.html"
+                                class="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Home</a></li>
+                        <li><a href="notes/notes.html"
+                                class="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Notes
+                                Library</a>
+                        </li>
+                        <!-- <li><a href="community.html"
+                            class="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Community</a></li> -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="footer/policy.html"
+                                class="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Privacy
+                                Policy</a>
+                        </li>
+                        <li><a href="footer/tc.html"
+                                class="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Terms &amp;
+                                Conditions</a></li>
+                        <li><a href="footer/disclaimer.html"
+                                class="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Disclaimer</a>
+                        </li>
+                        <li><a href="footer/faq.html"
+                                class="hover:text-yellow-400 transition hover:translate-x-1 inline-block">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/notenexus/" target="_blank" class="social-icon"
+                        aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@notenexusofficial" target="_blank" class="social-icon"
+                        aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/notenexus.in/" target="_blank" class="social-icon"
+                        aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://x.com/itsnotenexus" target="_blank" class="social-icon" aria-label="X (Twitter)">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="https://discord.gg/nc6x8NEM" target="_blank" class="social-icon" aria-label="Discord">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+
+                    <a href="mailto:mail.notenexus@gmail.com" class="social-icon" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+
+            </div>
+            <div class="copyright text-center text-xs text-gray-600 pt-8 border-t border-white/5">&copy; 2025 Note
+                Nexus.
+                All rights
+                reserved.</div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+
+</html>
